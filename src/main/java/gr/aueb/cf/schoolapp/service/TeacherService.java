@@ -124,7 +124,7 @@ public class TeacherService implements ITeacherService {
             Teacher teacher = teacherRepository.findByUuid(uuid)
                     .orElseThrow(() -> new EntityNotFoundException("Teacher", "Teacher with uuid: " + uuid + " not found"));
 
-            // Αν υπάρχει, κάνε delete με το uuid
+            // Αν υπάρχει, κάνει delete με το uuid
             // Εναλλακτικά για soft delete χρειαζόμαστε πεδίο deleted (Boolean) και deletedAt (LocalDateTime)
             // Για soft delete κάνουμε setDeleted(true) και save
             teacherRepository.deleteById(teacher.getId());
